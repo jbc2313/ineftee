@@ -39,6 +39,11 @@
 | Update  | /posts/:id      | PUT    | Update a particular post and redirect to that post |
 | Destroy | /posts/:id      | DELETE | Delete a specific post                             |
 
+# MVP and Stretch Goals
+
+>  A working app that allows users to create an account and upload NFT's to a database and then create posts about their NFT's.
+>  Stretch Goals are to allow users to follow other users and post comments on other users posts. 
+
 # Link to Project
 
-> https:// dont have a site yet...
+>  https:// dont have a site yet...
