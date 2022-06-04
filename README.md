@@ -23,7 +23,7 @@
 
 ![INdexWireframe](https://user-images.githubusercontent.com/101614021/171978544-f643b679-9a42-4239-81b8-69d1d64e8634.svg)
 
-![ShowPOst drawio](https://user-images.githubusercontent.com/101614021/171978561-7945fdd0-219a-4221-af69-ee0f9c4ee21e.svg)
+![CreateWire](https://user-images.githubusercontent.com/101614021/171979081-c070429f-db7a-4a0c-9c53-fa8165ff5ff5.svg)
 
 ![ProfileWIRE](https://user-images.githubusercontent.com/101614021/171978606-c2e4d059-02c5-4ffb-9d63-3dc9d3b7c914.svg)
 
