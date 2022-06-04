@@ -42,7 +42,7 @@
 
 # ERD Template / Models
 
-![ERD Project 2](https://user-images.githubusercontent.com/101614021/171979312-ef16404c-ee62-4ce4-909f-f4dbc07a5bc6.svg)
+![ERD Project 21](https://user-images.githubusercontent.com/101614021/171979504-e27ba3ab-de3f-4c46-a570-edb2a37b6a5f.svg)
 
 # MVP and Stretch Goals
 
