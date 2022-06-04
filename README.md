@@ -28,11 +28,6 @@
 ![ProfileWIRE](https://user-images.githubusercontent.com/101614021/171978606-c2e4d059-02c5-4ffb-9d63-3dc9d3b7c914.svg)
 
 
-
-# ERD Template / Models
-
-> Working on..
-
 # CRUD Routes
 
 | Route   | URL             | HTTP   | Description                                        |
@@ -44,6 +39,10 @@
 | Edit    | /posts/:id/edit | GET    | Show edit form of one post                         |
 | Update  | /posts/:id      | PUT    | Update a particular post and redirect to that post |
 | Destroy | /posts/:id      | DELETE | Delete a specific post                             |
+
+# ERD Template / Models
+
+![ERD Project 2](https://user-images.githubusercontent.com/101614021/171979312-ef16404c-ee62-4ce4-909f-f4dbc07a5bc6.svg)
 
 # MVP and Stretch Goals
 
