@@ -24,14 +24,16 @@ app.set('view engine', 'ejs');
 
 //basic express setup
 app.use(express.static('./public'));
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//init for passport
 app.use(session({
     secret: 'SEIRocks!',
     resave: false,
     saveUninitialized: true
-  }));
-
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -5,14 +5,14 @@
     <br>
 <div class="box has-background-primary has-text-centered">
     <div class="box">
-        <h1 class="title is-2">Create a New Post</h1>
+        <h1 class="title is-2">Edit Post</h1>
     </div>
     <div class="box">
-        <form action="/post" method="POST">
+        <form action="/post/<%= post._id%>?_method=PUT" method="POST">
             <label for="name">Title:</label>
-            <input type="text" name="name"><br><br>
+            <input type="text" name="name" placeholder="<%= post.name %> "><br><br>
             <label for="content">Content:</label>
-            <textarea class="textarea is-primary" name="content"></textarea><br>
+            <textarea class="textarea is-primary" name="content" placeholder="<%= post.content %> "></textarea><br>
             <button type="submit" class="button is-primary">Submit</button>
         
         

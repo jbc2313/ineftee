@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <br>
+    <div class="box has-background-primary">
+        <div class="box has-text-centered">
+            
+            <h2 class="title is-4"><%= post.name%></h2> <br>
+            <%= post.content%> 
+        </div>
+        <div class="is-flex is-justify-content-space-between">
+            <div>
+                <form action="/post/<%= post._id%>/edit" method="GET">
+                    <button class="button is-warning mx-2" type="submit">Update</button>
+                </form>
+            </div>
+            <div>
+                <form action="/post/<%= post._id%>?_method=delete" method="POST">
+                    <button class="button is-danger" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+
+
+<%- include('../partials/footer') %> 

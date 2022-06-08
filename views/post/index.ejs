@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+
+    <br>
+    <h1>Show all posts</h1>
+    <br>
+
+    <% posts.forEach(post => { %>
+        <div class="box">
+
+            <a href="/post/<%= post._id%> "><%= post.name  %></a>
+            <br>
+            <%= post.content %> 
+            <br>
+        
+        </div>
+
+    <% }) %> 
+
+    <br>
+
+
+
+
+
+
+
+
+</div>
+
+<%- include('../partials/footer') %> 
