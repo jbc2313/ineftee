@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
 const passport = require('passport');
 
 
@@ -13,7 +14,9 @@ const app = express();
 const port = 5005;
 
 //require routes
-
+const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+const nftRoutes = require('./routes/nftRoutes');
 
 
 //view engine setup
@@ -23,6 +26,11 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: 'SEIRocks!',
+    resave: false,
+    saveUninitialized: true
+  }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -34,7 +42,24 @@ app.use(function (req, res, next) {
 });
 
 
+
+
+
+
+
+
+
 //mount all routes
+app.use('/user', userRoutes);
+app.use('/post', postRoutes);
+app.use('/nft', nftRoutes);
+
+
+
+// initial route users will hit when they hit my app
+app.get('/', (req, res) => {
+    res.render('index');
+})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port} `)
