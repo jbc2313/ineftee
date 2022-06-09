@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+
+    <br>
+    <h1>Show all NFT's</h1>
+    <br>
+
+    <% n.forEach(nft => { %>
+        <div class="box">
+
+            <a href="/nft/<%= nft._id%> "><%= nft.name  %></a>
+            <br>
+            <img src="data:image/<%=nft.nftFile.contentType%>;base64,<%=nft.nftFile.data.toString('base64')%>" alt="">
+            <br>
+        
+        </div>
+
+    <% }) %> 
+
+    <br>
+
+
+
+
+
+
+
+
+</div>
+
+<%- include('../partials/footer') %> 

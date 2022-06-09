@@ -6,12 +6,16 @@ const mongoose = require('mongoose');
 
 const nftSchema = new mongoose.Schema({
     name: String,
+    nftFile: {
+        data: Buffer,
+        contentType: String
+    },
     owner: {
         //Reference another mongoDB model
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    buf: Buffer
+    
 
 });
 
