@@ -3,8 +3,14 @@
 
 <div class="container">
     <div class="box">
+        
         <h1 class="title">
-            Please Sign In
+          <% if (auth) { %> 
+                How did you get here?
+                You succeesfully logged in.
+            <% } else {%>
+                You Need to Log In
+                <% } %> 
         </h1>
 
 
