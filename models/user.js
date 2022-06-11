@@ -8,6 +8,11 @@ const userSchema = new mongoose.Schema({
     name: String,
     username: String,
     email: String,
+    authId: String,
+    posts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Post'
+    }]
 
 });
 

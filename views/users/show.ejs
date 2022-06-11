@@ -1,7 +1,67 @@
 <%- include('../partials/header')  %>
 
 
+<div class="container"><br>
+    <div class="box has-background-info">
+        <table class="table is-bordered is-striped">
+            <thead>
+                <tr class="has-background-primary">
+                    <th></th>
+                    <th>User info</th>
+                    <!-- otherheadings -->
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                     <td><%= user.name%></td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td><%= user.username%> </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><%= user.email%></td>
+                </tr>
+                <tr>
+                    <th>AuthId</th>
+                    <td><%= user.authId%> </td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        
+        
+         
+    </div>
+    <br>
+    <div class="box has-background-info is-flex">
+        <% console.log(user) %> 
+        <div><a href="/user/<%= user._id%>/edit"><button class="button is-warning">Update Profile</button></a></div>
 
+    </div>
+    <div class="box has-background-info is-flex">
+        
+        <% user.posts.forEach(post => { %> 
+            <div class="box">
+            <b><%= post.name  %></b><br><br>
+             <%= post.content  %> 
+            
+            </div>
+
+        <% }) %> 
+
+    </div>
+
+
+
+
+
+
+</div>
 
 
 <%- include('../partials/footer')  %> 

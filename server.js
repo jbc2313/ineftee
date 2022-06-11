@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //mount all routes
 app.use(userRoutes);
-app.use('/post', postRoutes);
+app.use(postRoutes);
 app.use('/nft', nftRoutes);
 
 
