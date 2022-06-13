@@ -11,8 +11,6 @@ const newForm = (req, res) => {
 };
 
 const saveNft = (req, res) => {
-    console.log(req.file.buffer);
-    console.log(req.body.name);
     const title = req.body.name;
     const nftType = req.file.mimetype;
     const nftData = req.file.buffer;
@@ -23,6 +21,7 @@ const saveNft = (req, res) => {
             contentType: nftType,
         }
     })
+    res.redirect('/nft')
 };
 
 const showOneNft = (req, res) => {

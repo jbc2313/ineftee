@@ -10,9 +10,9 @@
     <div class="box">
         <form action="/post/<%= post._id%>?_method=PUT" method="POST">
             <label for="name">Title:</label>
-            <input type="text" name="name" placeholder="<%= post.name %> "><br><br>
+            <input type="text" name="name" placeholder="<%= post.name %> " required><br><br>
             <label for="content">Content:</label>
-            <textarea class="textarea is-primary" name="content" placeholder="<%= post.content %> "></textarea><br>
+            <textarea class="textarea is-primary" name="content" placeholder="<%= post.content %>" required></textarea><br>
             <button type="submit" class="button is-primary">Submit</button>
         
         

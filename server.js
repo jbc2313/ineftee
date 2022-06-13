@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
-const session = require('express-session');
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
 const multer = require('multer');
@@ -14,7 +13,8 @@ require('./db/connection');
 
 // init express
 const app = express();
-const port = 5005;
+
+const port = process.env.PORT || '5005';
 
 //require routes
 const userRoutes = require('./routes/userRoutes');
@@ -42,6 +42,12 @@ app.use('/nft', nftRoutes);
 
 
 
+//might need for heroku
+// app.set('port', process.env.PORT || 8000);
+
+// app.listen(app.get('port'), ()=>{
+//     console.log(`PORT: ${app.get('port')}`)
+// });
 
 app.listen(port, () => {
     console.log(`Listening on port ${port} `)
