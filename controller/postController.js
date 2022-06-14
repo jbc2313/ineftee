@@ -12,14 +12,32 @@ const showNew = (req, res) => {
 };
 
 const createPost = (req, res) => {
-    console.log(req.body);
-    Post.create(req.body)
+    // console.log('req.body is')
+    // console.log(req.body);
+    // console.log('req.file is next')
+    // console.log(req.file)
+    // console.log('nfttype and nftdaya are next')
+    // console.log(nftType);
+    // console.log(nftData);
+    const nftName = req.body.nftname;
+    const nftType = req.file.mimetype;
+    const nftData = req.file.buffer;
+    Post.create({
+        name: req.body.name,
+        content: req.body.content,
+        nft: {
+            name: nftName,
+            nftFile: {
+                data: nftData,
+                contentType: nftType,
+            }
+        }
+    })
     .then(post => {
         User.findOneAndUpdate({"email": req.oidc.user.email}, {$push: {posts: post._id}})
         .then(user => console.log(user))
     })
     .then(res.redirect('/post'))
-    
 };
 
 const showOnePost = (req, res) => {

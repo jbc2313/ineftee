@@ -11,11 +11,11 @@ const newForm = (req, res) => {
 };
 
 const saveNft = (req, res) => {
-    const title = req.body.name;
+    const nftName = req.body.nftname;
     const nftType = req.file.mimetype;
     const nftData = req.file.buffer;
     Nft.create({
-        name: req.body.name,
+        name: nftName,
         nftFile: {
             data: nftData,
             contentType: nftType,
