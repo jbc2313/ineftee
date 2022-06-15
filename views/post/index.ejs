@@ -3,16 +3,19 @@
 <div class="container">
 
     <br>
-    <h1>Show all posts</h1>
+    <h1 class="is-size-3 has-text-centered">Posts from around the Web</h1>
     <br>
 
     <% posts.forEach(post => { %>
-        <div class="box">
-
-            <a href="/post/<%= post._id%> "><%= post.name  %></a>
-            <br>
-            <%= post.content %> 
-            <br>
+        <div class="box is-flex is-justify-content-center">
+            <div class="child">
+                <img style="height: 150px;" class="is-clipped" src="data:image/<%=post.nft[0].nftFile.contentType%>;base64,<%=post.nft[0].nftFile.data.toString('base64')%>" alt="">
+            </div>
+            <div class="child px-4">
+                <a href="/post/<%= post._id%> "><%= post.name  %></a>
+                <br><br>
+                <%= post.content %> 
+            </div>
         
         </div>
 

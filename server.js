@@ -19,8 +19,6 @@ const port = process.env.PORT || '5005';
 //require routes
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
-const nftRoutes = require('./routes/nftRoutes');
-
 
 
 //view engine setup
@@ -38,16 +36,8 @@ app.use(express.urlencoded({ extended: true }));
 //mount all routes
 app.use(userRoutes);
 app.use(postRoutes);
-app.use('/nft', nftRoutes);
 
 
-
-//might need for heroku
-// app.set('port', process.env.PORT || 8000);
-
-// app.listen(app.get('port'), ()=>{
-//     console.log(`PORT: ${app.get('port')}`)
-// });
 
 app.listen(port, () => {
     console.log(`Listening on port ${port} `)
