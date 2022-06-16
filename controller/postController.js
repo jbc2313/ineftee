@@ -46,6 +46,10 @@ const showOnePost = (req, res) => {
 };
 
 const deletePost = (req, res) => {
+    let id = req.params.id;
+    console.log(id)
+    User.findOneAndUpdate({"email": req.oidc.user.email}, {$pull: {posts: id }}, {new: true})
+    .then(user => console.log(user.posts))
     Post.findByIdAndDelete(req.params.id)
     .then(console.log('post deleted'))
     res.redirect('/post');
