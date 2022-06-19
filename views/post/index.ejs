@@ -12,9 +12,12 @@
                 <img style="height: 150px;" class="is-clipped" src="data:image/<%=post.nft[0].nftFile.contentType%>;base64,<%=post.nft[0].nftFile.data.toString('base64')%>" alt="">
             </div>
             <div class="child px-4">
-                <a href="/post/<%= post._id%> "><%= post.name  %></a>
-                <br><br>
-                <%= post.content %> 
+                <u><a href="/post/<%= post._id%> "><%= post.name  %></a></u>
+                <br>
+                <%= post.content %>
+                <br><br><br>
+                <span class="title-is-6">posted by:</span>
+                <span><%= post.owner.username %> </span>
             </div>
         
         </div>

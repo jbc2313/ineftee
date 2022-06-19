@@ -4,6 +4,7 @@ const router = require('../routes/postRoutes');
 
 const showPosts = (req, res) => {
     Post.find({})
+    .populate('owner')
     .then(posts => res.render('post/index', {posts}))
 };
 
@@ -22,16 +23,20 @@ const createPost = (req, res) => {
     const nftName = req.body.nftname;
     const nftType = req.file.mimetype;
     const nftData = req.file.buffer;
-    Post.create({
-        name: req.body.name,
-        content: req.body.content,
-        nft: {
-            name: nftName,
-            nftFile: {
-                data: nftData,
-                contentType: nftType,
+    User.findOne({'email': req.oidc.user.email})
+    .then(user => {
+      return  Post.create({
+            name: req.body.name,
+            content: req.body.content,
+            owner: user._id,
+            nft: {
+                name: nftName,
+                nftFile: {
+                    data: nftData,
+                    contentType: nftType,
+                }
             }
-        }
+        })
     })
     .then(post => {
         User.findOneAndUpdate({"email": req.oidc.user.email}, {$push: {posts: post._id}})
@@ -42,6 +47,7 @@ const createPost = (req, res) => {
 
 const showOnePost = (req, res) => {
     Post.findById(req.params.id)
+    .populate('owner')
     .then(post => res.render('post/show', {post}))
 };
 

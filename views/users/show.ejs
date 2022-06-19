@@ -33,26 +33,46 @@
                 
             </tbody>
         </table>
-        
+        <div class="box has-background-info is-flex is-justify-content-space-between ">
+            <div><a href="/user/<%= user._id%>/edit"><button class="button is-warning">Update Profile</button></a></div>
+            <div><a href="#"><button class="button is-danger">Delete Profile</button></a></div>
+    
+        </div>
         
          
     </div>
     <br>
-    <div class="box has-background-info is-flex">
-        <% console.log(user) %> 
-        <div><a href="/user/<%= user._id%>/edit"><button class="button is-warning">Update Profile</button></a></div>
+    
+    
+    <div class="box has-background-info">
+        <div class="box">
+            <h2 class="title is-4">All Posts</h2>
+        </div>
+        <div class="box has-background-info is-flex-wrap-wrap">
+            <% user.posts.forEach(post => { %> 
+                <div class="box is-flex-direction-column" style="margin-left: 5px;">
+                    <div class="box is-flex is-justify-content-center">
+                        <a href="/post/<%= post._id %>"> <%= post.name  %> </a>
+                    </div>
+                    <div class="box is-flex is-justify-content-space-between">
+                        <div>
+                            <form action="/post/<%= post._id%>/edit" method="GET">
+                                <button class="button is-warning mx-2" type="submit">Update</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="/post/<%= post._id%>?_method=delete" method="POST">
+                                <button class="button is-danger" type="submit">Delete</button>
+                            </form>
+                        </div>
+                   </div>
+                </div>
+    
+            <% }) %>
+        </div>
+         
 
-    </div>
-    <div class="box has-background-info is-flex">
-        
-        <% user.posts.forEach(post => { %> 
-            <div class="box" style="margin-left: 5px;">
-            <b><%= post.name  %></b><br><br>
-             <%= post.content  %> 
-            
-            </div>
 
-        <% }) %> 
 
     </div>
 

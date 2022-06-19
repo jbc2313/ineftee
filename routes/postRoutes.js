@@ -17,7 +17,7 @@ router.post('/post', upload.single('nftFile'), postCtrl.createPost);
 
 router.get('/post/:id', postCtrl.showOnePost);
 
-router.get('/post/:id/edit', requiresAuth(), postCtrl.showEdit);
+router.get('/post/:id/edit', postCtrl.showEdit);
 
 router.put('/post/:id', postCtrl.editPost);
 

@@ -5,21 +5,14 @@
     <div class="box has-background-primary">
         <div class="box has-text-centered">
             
-            <h2 class="title is-4"><%= post.name%></h2> <br>
-            <img src="data:image/<%=post.nft[0].nftFile.contentType%>;base64,<%=post.nft[0].nftFile.data.toString('base64')%>" alt=""> 
+            <h2 class="title is-2"><%= post.name%></h2>
+            <h3 class="title is-6">posted by:</h3>
+            <h3 class="title is-4"><%= post.owner.username%></h3> <br>
+            <img src="data:image/<%=post.nft[0].nftFile.contentType%>;base64,<%=post.nft[0].nftFile.data.toString('base64')%>" alt="nft"> <br>
             <%= post.content%> 
         </div>
         <div class="is-flex is-justify-content-space-between">
-            <div>
-                <form action="/post/<%= post._id%>/edit" method="GET">
-                    <button class="button is-warning mx-2" type="submit">Update</button>
-                </form>
-            </div>
-            <div>
-                <form action="/post/<%= post._id%>?_method=delete" method="POST">
-                    <button class="button is-danger" type="submit">Delete</button>
-                </form>
-            </div>
+           <H1>comments can go here</H1>
         </div>
         
         
