@@ -1,6 +1,6 @@
 # Ineftee
 
-
+![Screen Shot 2022-06-21 at 3 00 12 PM](https://user-images.githubusercontent.com/101614021/174887682-7dbe87aa-e9a1-4e05-befe-175b599a2a76.png)
 
 # Technologies Used
 
