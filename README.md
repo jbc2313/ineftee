@@ -1,6 +1,6 @@
 # Ineftee
 
->  screen shots of app when finished
+
 
 # Technologies Used
 
@@ -8,7 +8,19 @@
 
 # Instructions
 
-> to be filled when app complete
+> 1. Navigate your browser to https://ineftee.herokuapp.com/
+> 2. Click the login button at the top of the screen in the navbar.
+> 3. If this is your first time logging in you will have to create an account.
+> 4. If needed click signup on the login in screen. Then enter your email and password. 
+> 5. You will be prompted by Auth0 to allow ineftee to access your profile info. Click Yes.
+> 6. After logging in you will be redirected to the main feed.
+> 7. Go ahead and look around if you want, before you post go ahead and click Profile in the Navbar.
+> 8. Make sure you update your profile to the info you want to be displayed. ie.. your username.
+> 9. After creating a username you are happy with go ahead and click New Post in the Navbar.
+> 10. Enter the name of the NFT you are uploading, then select the NFT from your filesytem.
+> 11. Make sure and enter a post title and add some info in the body of the post. 
+> 12. Click Submit and you will be directed back to the main Feed. 
+> 13. Now you know how to use Ineftee. Enjoy!
 
 # User Stories
 
@@ -51,4 +63,4 @@
 
 # Link to Project
 
->  https:// dont have a site yet...
+> https://ineftee.herokuapp.com/
