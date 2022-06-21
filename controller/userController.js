@@ -23,7 +23,8 @@ const createUser = (req, res) => {
                 authId: req.oidc.user.sub,
             });
             newUser.save();
-            res.redirect('/user/profile')
+            console.log(newUser);
+            res.redirect('/post')
         }else {
             // user is already in db
             res.redirect('/post')
