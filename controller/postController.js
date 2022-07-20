@@ -1,6 +1,5 @@
 const Post = require('../models/post');
 const User = require('../models/user');
-const router = require('../routes/postRoutes');
 
 const showPosts = (req, res) => {
     Post.find({})

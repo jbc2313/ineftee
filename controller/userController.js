@@ -4,11 +4,10 @@ const router = require('../routes/userRoutes');
 //after login will route user to db setup *** after logout sends user to a login page
 const loginoutPage = (req, res) => {
     let auth =  req.oidc.isAuthenticated()
-    let user = req.oidc.user
     if(auth){
         res.redirect('/user/setup');
     }else
-    res.render('index', {auth, user})
+    res.redirect('/post');
   }
 
 const createUser = (req, res) => {
